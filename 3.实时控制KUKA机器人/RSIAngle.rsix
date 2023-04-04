@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not change! The content of this file is generated. -->
+<!-- Generated with RSIVisual WorkVisual plugin. -->
+<!-- RobotSensorInterface 4.0 B2647 -->
+<RsiContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="0.1.0">
+  <RsiObjects>
+    <RsiObject ObjTypeId="64" ObjType="Ethernet" ObjId="ETHERNET1">
+      <Parameters>
+        <Parameter IsRuntime="false" Name="ConfigFile" ParamId="0" ParamValue="RSIAngle.xml" />
+        <Parameter Name="Timeout" ParamId="0" ParamValue="200" />
+        <Parameter Name="Flag" ParamId="3" ParamValue="1" />
+        <Parameter Name="Precision" ParamId="7" ParamValue="1" />
+      </Parameters>
+    </RsiObject>
+    <RsiObject ObjTypeId="24" ObjType="PosAct" ObjId="PosAct_1">
+      <Parameters>
+        <Parameter Name="Type" ParamId="0" ParamValue="0" />
+      </Parameters>
+    </RsiObject>
+    <RsiObject ObjTypeId="55" ObjType="Monitor" ObjId="Monitor_1">
+      <Inputs>
+        <Input InIdx="0" OutObjId="PosAct_1" OutIdx="2" />
+        <Input InIdx="1" OutObjId="AxisAct_1" OutIdx="0" />
+      </Inputs>
+      <Parameters>
+        <Parameter Name="Refresh" ParamId="0" ParamValue="1" />
+        <Parameter Name="Timeout" ParamId="1" ParamValue="50" />
+        <Parameter Name="ReqTimeZero" ParamId="2" ParamValue="1" />
+        <Parameter IsRuntime="false" Name="IP" ParamId="0" ParamValue="10.168.1.122" />
+        <Parameter IsRuntime="false" Name="Channel" ParamId="1" ParamValue="1" />
+      </Parameters>
+    </RsiObject>
+    <RsiObject ObjTypeId="33" ObjType="AxisCorr" ObjId="AxisCorr_1">
+      <Inputs>
+        <Input InIdx="0" OutObjId="ETHERNET1" OutIdx="0" />
+        <Input InIdx="1" OutObjId="ETHERNET1" OutIdx="1" />
+        <Input InIdx="2" OutObjId="ETHERNET1" OutIdx="2" />
+        <Input InIdx="3" OutObjId="ETHERNET1" OutIdx="3" />
+        <Input InIdx="4" OutObjId="ETHERNET1" OutIdx="4" />
+        <Input InIdx="5" OutObjId="ETHERNET1" OutIdx="5" />
+      </Inputs>
+      <Parameters>
+        <Parameter Name="LowerLimA1" ParamId="0" ParamValue="-1000" />
+        <Parameter Name="LowerLimA2" ParamId="1" ParamValue="-1000" />
+        <Parameter Name="LowerLimA3" ParamId="2" ParamValue="-1000" />
+        <Parameter Name="LowerLimA4" ParamId="3" ParamValue="-1000" />
+        <Parameter Name="LowerLimA5" ParamId="4" ParamValue="-1000" />
+        <Parameter Name="LowerLimA6" ParamId="5" ParamValue="-1000" />
+        <Parameter Name="UpperLimA1" ParamId="6" ParamValue="1000" />
+        <Parameter Name="UpperLimA2" ParamId="7" ParamValue="1000" />
+        <Parameter Name="UpperLimA3" ParamId="8" ParamValue="1000" />
+        <Parameter Name="UpperLimA4" ParamId="9" ParamValue="1000" />
+        <Parameter Name="UpperLimA5" ParamId="10" ParamValue="1000" />
+        <Parameter Name="UpperLimA6" ParamId="11" ParamValue="1000" />
+      </Parameters>
+    </RsiObject>
+    <RsiObject ObjTypeId="32" ObjType="AxisAct" ObjId="AxisAct_1">
+      <Parameters>
+        <Parameter Name="Type" ParamId="0" ParamValue="0" />
+      </Parameters>
+    </RsiObject>
+    <RsiObject ObjTypeId="82" ObjType="AxisCorrMon" ObjId="AxisCorrMon_1">
+      <Parameters>
+        <Parameter Name="MaxA1" ParamId="0" ParamValue="1000" />
+        <Parameter Name="MaxA2" ParamId="1" ParamValue="1000" />
+        <Parameter Name="MaxA3" ParamId="2" ParamValue="1000" />
+        <Parameter Name="MaxA4" ParamId="3" ParamValue="1000" />
+        <Parameter Name="MaxA5" ParamId="4" ParamValue="1000" />
+        <Parameter Name="MaxA6" ParamId="5" ParamValue="1000" />
+        <Parameter Name="MaxE1" ParamId="6" ParamValue="100000" />
+        <Parameter Name="MaxE2" ParamId="7" ParamValue="100000" />
+        <Parameter Name="MaxE3" ParamId="8" ParamValue="100000" />
+        <Parameter Name="MaxE4" ParamId="9" ParamValue="100000" />
+        <Parameter Name="MaxE5" ParamId="10" ParamValue="100000" />
+        <Parameter Name="MaxE6" ParamId="11" ParamValue="100000" />
+      </Parameters>
+    </RsiObject>
+  </RsiObjects>
+  <Editor>
+    <Comments />
+    <Groups />
+    <Links>
+      <Link From="PosAct_1" FromPort="Z" Points="229.306666666667,-46.5;241.306666666667,-46.5;253.306666666667,-46.5;253.306666666667,-130.5;920,-130.5;936,-130.5" To="Monitor_1" ToPort="In1" />
+      <Link From="ETHERNET1" FromPort="Out1" Points="298.516666666667,181.5;310.516666666667,181.5;322.516666666667,181.5;322.516666666667,85.5;920,85.5;936,85.5" To="AxisCorr_1" ToPort="CorrA1" />
+      <Link From="ETHERNET1" FromPort="Out2" Points="298.516666666667,211.5;318.516666666667,211.5;338.516666666667,211.5;338.516666666667,115.5;920,115.5;936,115.5" To="AxisCorr_1" ToPort="CorrA2" />
+      <Link From="ETHERNET1" FromPort="Out3" Points="298.516666666667,241.5;326.516666666667,241.5;354.516666666667,241.5;354.516666666667,145.5;920,145.5;936,145.5" To="AxisCorr_1" ToPort="CorrA3" />
+      <Link From="ETHERNET1" FromPort="Out4" Points="298.516666666667,271.5;334.516666666667,271.5;370.516666666667,271.5;370.516666666667,175.5;920,175.5;936,175.5" To="AxisCorr_1" ToPort="CorrA4" />
+      <Link From="ETHERNET1" FromPort="Out5" Points="298.516666666667,301.5;342.516666666667,301.5;386.516666666667,301.5;386.516666666667,205.5;920,205.5;936,205.5" To="AxisCorr_1" ToPort="CorrA5" />
+      <Link From="ETHERNET1" FromPort="Out6" Points="298.516666666667,331.5;350.516666666667,331.5;402.516666666667,331.5;402.516666666667,235.5;920,235.5;936,235.5" To="AxisCorr_1" ToPort="CorrA6" />
+      <Link From="AxisAct_1" FromPort="A1" Points="511.306666666667,-94.5;523.306666666667,-94.5;535.306666666667,-94.5;535.306666666667,-100.5;920,-100.5;936,-100.5" To="Monitor_1" ToPort="In2" />
+    </Links>
+    <Nodes>
+      <Node Location="120,162" Name="ETHERNET1" NumberOfInputs="6" NumberOfOutputs="9" Type="Ethernet" />
+      <Node Location="72,-126" Name="PosAct_1" Type="PosAct" />
+      <Node Location="954,-150" Name="Monitor_1" NumberOfInputs="3" Type="Monitor" />
+      <Node Location="954,66" Name="AxisCorr_1" Type="AxisCorr" />
+      <Node Location="354,-114" Name="AxisAct_1" Type="AxisAct" />
+      <Node Location="492,258" Name="AxisCorrMon_1" Type="AxisCorrMon" />
+    </Nodes>
+    <Toolboxes>
+      <Toolbox Name="RSI" Version="1.1.0" />
+    </Toolboxes>
+  </Editor>
+</RsiContext>
